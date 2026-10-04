@@ -319,17 +319,8 @@ from the Zenodo record and returns P_mm(k, z), P_cb(k, z), σ8(z) and fσ8(z) to
 `cloelike`. They can equally be plugged into any other framework that accepts an
 external P(k, z) provider (CosmoSIS, CCL, …).
 
-Zenodo record: cloelib currently points at `https://zenodo.org/records/19678842`.
-
 ---
 
-## Caveats
-
-* Each emulator is only as accurate as the prescription it was trained on
-  (HMCode2020, Halofit, the DDM fitting formula, COLA); those model uncertainties
-  must be accounted for separately in a real-data analysis.
-* The DDM boost formula was calibrated for lifetimes ≳ 30 Gyr, z ≲ 2.3 and
-  k ≲ a few Mpc⁻¹; beyond that the reconstructed nonlinear spectrum is extrapolated.
 
 ## Citation
 
