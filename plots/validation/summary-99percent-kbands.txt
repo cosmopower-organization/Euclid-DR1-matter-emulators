@@ -1,0 +1,146 @@
+Median of the 99% relative-error curve [%] within each k band (k in Mpc^-1), plus the max of the 68% / 99% curves and the number of test cosmologies.
+
+emulator                                    k<0.01     0.01<=k<1      1<=k<=50     max68     max99   n_test  note
+-----------------------------------------------------------------------------------------------------------------
+lcdm-0mass-linear                          0.01420       0.03573       0.01289    0.0138    0.0946    31589  
+lcdm-0mass-cb-linear                       0.01288       0.02913       0.01183    0.0112    0.0888    31589  
+lcdm-0mass-cb-nonlinear                    0.06214       0.22492       0.41398    0.0670    0.5053    31373  
+lcdm-0mass-nonlinear                       0.07492       0.25878       0.48875    0.0777    0.6796    31373  
+lcdm-1mass-linear                          0.02182       0.04251       0.02152    0.0253    0.1411    31611  
+lcdm-1mass-cb-linear                       0.02208       0.04486       0.01852    0.0146    0.0844    31602  
+lcdm-1mass-cb-nonlinear                    0.11677       0.30710       0.62758    0.1508    1.1474    31378  
+lcdm-1mass-nonlinear                       0.11190       0.29960       0.58715    0.1119    1.0226    31388  
+lcdm-2degen-linear                         0.03905       0.07011       0.03324    0.0183    0.0932    32810  
+lcdm-2degen-cb-linear                      0.02663       0.04824       0.02356    0.0210    0.1473    32801  
+lcdm-2degen-cb-nonlinear                   0.08653       0.23092       0.39310    0.0762    0.6585    32521  
+lcdm-2degen-nonlinear                      0.06929       0.21465       0.39988    0.0716    0.6150    32530  
+lcdm-3degen-linear                         0.03210       0.05424       0.02893    0.0263    0.1496    30151  
+lcdm-3degen-cb-linear                      0.07492       0.09867       0.07083    0.0318    0.1811    30147  
+lcdm-3degen-cb-nonlinear                   0.08071       0.22267       0.41541    0.0746    0.7024    29912  
+lcdm-3degen-nonlinear                      0.07614       0.20405       0.37764    0.0787    0.7863    29918  
+wcdm-0mass-linear                          0.18675       0.25615       0.16385    0.0700    0.6518    29897  
+wcdm-0mass-cb-linear                       0.17186       0.26506       0.16080    0.0597    0.5925    29897  
+wcdm-0mass-cb-nonlinear                    0.35900       0.79659       1.53199    0.2627    2.5177    29659  
+wcdm-0mass-nonlinear                       0.38773       0.75728       1.55887    0.2292    2.4300    29659  
+wcdm-1mass-linear                          0.21645       0.30264       0.18970    0.0930    0.7293    29957  
+wcdm-1mass-cb-linear                       0.20039       0.30114       0.17293    0.0711    0.7415    29948  
+wcdm-1mass-cb-nonlinear                    0.45934       0.89768       1.59549    0.2734    2.5913    29710  
+wcdm-1mass-nonlinear                       0.41760       0.74193       1.50843    0.2081    2.0586    29716  
+wcdm-2degen-linear                         0.15132       0.22130       0.13540    0.0605    0.5631    31696  
+wcdm-2degen-cb-linear                      0.17742       0.23982       0.15045    0.0734    0.6077    31689  
+wcdm-2degen-cb-nonlinear                   0.30194       0.54634       1.12180    0.1575    1.7158    31479  
+wcdm-2degen-nonlinear                      0.52996       0.93720       1.73795    0.3109    2.5102    31481  
+wcdm-3degen-linear                         0.19939       0.30145       0.16926    0.0734    0.6792    29963  
+wcdm-3degen-cb-linear                      0.27516       0.43693       0.26585    0.1421    1.0858    29958  
+wcdm-3degen-cb-nonlinear                   0.45332       0.82145       1.74744    0.2390    2.3122    29716  
+wcdm-3degen-nonlinear                      0.41756       0.71824       1.64915    0.2020    2.1400    29722  
+w0wa-0mass-linear                          0.26081       0.35107       0.19792    0.0844    0.5276    27101  
+w0wa-0mass-cb-linear                       0.12347       0.17022       0.11075    0.0488    0.5672    27101  
+w0wa-0mass-cb-nonlinear                    0.40586       0.76691       1.48758    0.2210    1.8838    26949  
+w0wa-0mass-nonlinear                       0.37791       0.64516       1.46118    0.2235    1.8833    26949  
+w0wa-1mass-linear                          0.16868       0.22002       0.15385    0.0616    0.5908    27234  
+w0wa-1mass-cb-linear                       0.13418       0.19642       0.12941    0.0463    0.5802    27229  
+w0wa-1mass-cb-nonlinear                    0.30046       0.57748       1.12051    0.1659    1.5487    27070  
+w0wa-1mass-nonlinear                       0.33759       0.64400       1.58267    0.1950    2.0414    27070  
+w0wa-2degen-linear                         0.14439       0.18695       0.12706    0.0520    0.5638    27883  
+w0wa-2degen-cb-linear                      0.16715       0.19891       0.15201    0.0716    0.5477    27874  
+w0wa-2degen-cb-nonlinear                   0.32322       0.53825       1.21906    0.2167    1.9002    27700  
+w0wa-2degen-nonlinear                      0.26293       0.49485       0.95540    0.1569    1.4284    27702  
+w0wa-3degen-linear                         0.18028       0.21570       0.16700    0.0577    0.7865    27240  
+w0wa-3degen-cb-linear                      0.18300       0.23350       0.16939    0.0542    0.6165    27230  
+w0wa-3degen-cb-nonlinear                   0.32286       0.58122       1.15305    0.1813    1.7865    27065  
+w0wa-3degen-nonlinear                      0.28850       0.50615       0.86565    0.1533    1.3846    27074  
+curvature-lcdm-0mass-linear                0.17490       0.19695       0.26217    0.1645    0.4450    34562  
+curvature-lcdm-0mass-cb-linear             0.17490       0.19695       0.26217    0.1645    0.4450    34562  
+curvature-lcdm-0mass-cb-nonlinear          0.25096       0.30788       0.53928    0.1982    0.7646    34019  
+curvature-lcdm-0mass-nonlinear             0.25096       0.30788       0.53928    0.1982    0.7646    34019  
+curvature-lcdm-1mass-linear                0.28505       0.27486       0.38878    0.2047    0.5523    30643  
+curvature-lcdm-1mass-cb-linear             0.23156       0.19485       0.15629    0.1367    0.4039    30623  
+curvature-lcdm-1mass-cb-nonlinear          0.23255       0.41740       0.78174    0.1754    1.3211    30129  
+curvature-lcdm-1mass-nonlinear             0.19026       0.29358       0.53087    0.1614    0.8897    30149  
+curvature-lcdm-3degen-linear               0.22530       0.24332       0.24264    0.1383    0.4404    29728  
+curvature-lcdm-3degen-cb-linear            0.28271       0.27367       0.37295    0.2516    0.6853    29718  
+curvature-lcdm-3degen-cb-nonlinear         0.41770       0.39779       0.64059    0.2118    1.1451    29231  
+curvature-lcdm-3degen-nonlinear            0.28450       0.31405       0.51401    0.1633    0.7850    29241  
+curvature-w0wa-0mass-linear                0.22171       0.27646       0.25029    0.1149    0.3968    28646  
+curvature-w0wa-0mass-cb-linear             0.22171       0.27646       0.25029    0.1149    0.3968    28646  
+curvature-w0wa-0mass-cb-nonlinear          0.47037       0.67764       1.66773    0.2571    1.8966    28076  
+curvature-w0wa-0mass-nonlinear             0.47037       0.67764       1.66773    0.2571    1.8966    28076  
+curvature-w0wa-1mass-linear                0.30480       0.34920       0.25668    0.0897    0.6220    27363  
+curvature-w0wa-1mass-cb-linear             0.22656       0.24802       0.26813    0.1475    0.4060    27347  
+curvature-w0wa-1mass-cb-nonlinear          0.44066       0.62996       1.51382    0.2189    1.9040    26807  
+curvature-w0wa-1mass-nonlinear             0.39700       0.62739       1.24963    0.2179    1.6782    26823  
+curvature-w0wa-3degen-linear               0.20611       0.23343       0.22270    0.1037    0.3735    26999  
+curvature-w0wa-3degen-cb-linear            0.25378       0.34452       0.47186    0.2179    0.6369    26989  
+curvature-w0wa-3degen-cb-nonlinear         0.49106       0.61751       1.24032    0.3183    1.9275    26445  
+curvature-w0wa-3degen-nonlinear            0.69751       1.05994       1.65988    0.3208    2.3861    26457  
+nrun-lcdm-0mass-linear                     0.23712       0.23139       0.22246    0.1293    0.4921     5821  
+nrun-lcdm-0mass-cb-linear                  0.23712       0.23139       0.22246    0.1293    0.4921     5821  
+nrun-lcdm-0mass-cb-nonlinear               0.19122       0.36659       0.51604    0.1515    0.9700     5669  
+nrun-lcdm-0mass-nonlinear                  0.19122       0.36659       0.51604    0.1515    0.9700     5669  
+nrun-lcdm-1mass-linear                     0.15095       0.24806       0.24963    0.1724    0.5059    17627  
+nrun-lcdm-1mass-cb-linear                  0.19504       0.19132       0.26081    0.2399    0.7902    17617  
+nrun-lcdm-1mass-cb-nonlinear               0.22223       0.45722       0.62761    0.1858    0.9900    18013  
+nrun-lcdm-1mass-nonlinear                  0.19646       0.44464       0.59399    0.1789    1.0323    18018  
+nrun-lcdm-3degen-linear                    0.17709       0.25192       0.15792    0.1112    0.6098    15715  
+nrun-lcdm-3degen-cb-linear                 0.51964       0.81653       0.44860    0.2219    1.6748    15714  
+nrun-lcdm-3degen-cb-nonlinear              0.16335       0.30133       0.43502    0.1765    0.8022    15273  
+nrun-lcdm-3degen-nonlinear                 0.22877       0.38242       0.53371    0.1926    0.8864    15275  
+nrun-w0wa-0mass-linear                     0.23355       0.26410       0.23213    0.1286    0.4176    16059  
+nrun-w0wa-0mass-cb-linear                  0.23355       0.26410       0.23213    0.1286    0.4176    16059  
+nrun-w0wa-0mass-cb-nonlinear               0.78577       1.46850       2.29243    0.3827    3.9496    16368  
+nrun-w0wa-0mass-nonlinear                  0.78577       1.46850       2.29243    0.3827    3.9496    16368  
+nrun-w0wa-1mass-linear                     0.29214       0.27409       0.35381    0.1991    0.6157    15513  
+nrun-w0wa-1mass-cb-linear                  0.32003       0.39503       0.31089    0.1317    0.7319    15508  
+nrun-w0wa-1mass-cb-nonlinear               0.76467       1.35211       2.05921    0.3369    3.4848    14998  
+nrun-w0wa-1mass-nonlinear                  1.05982       1.63668       2.26729    0.3975    4.3612    15005  
+nrun-w0wa-3degen-linear                    0.49503       0.59498       0.40531    0.1626    0.8809    16700  
+nrun-w0wa-3degen-cb-linear                 0.30998       0.37388       0.27987    0.1301    0.6822    16695  
+nrun-w0wa-3degen-cb-nonlinear              0.51042       0.85067       1.55784    0.2537    2.6619    17009  
+nrun-w0wa-3degen-nonlinear                 0.65792       1.07659       1.76021    0.2937    3.2772    17012  
+ddm-1body-combined-linear                  0.14403       0.11748       0.28899    0.4805    2.0284    16800  
+ddm-1body-combined-cb-linear               0.50529       1.63851       1.73801    0.9871    3.0956    16800  NO P_cb test set: cross-check against total-matter pk_lin only
+halofit-wcdm-0mass-linear                  0.34185       0.16471       0.14128    0.1905    0.5259    36500  
+halofit-wcdm-0mass-cb-linear               0.16050       0.21410       0.14534    0.1428    0.5935    36500  
+halofit-wcdm-0mass-cb-nonlinear            0.59360       1.03787       1.17907    0.2273    1.6378    34283  
+halofit-wcdm-0mass-nonlinear               0.72603       1.45421       1.52254    0.4235    2.2776    34283  
+halofit-wcdm-1mass-linear                  0.13968       0.18803       0.12848    0.0804    0.4050    36303  
+halofit-wcdm-1mass-cb-linear               0.14257       0.15380       0.10671    0.0601    0.2113    36269  
+halofit-wcdm-1mass-cb-nonlinear            0.76988       1.34832       1.65009    0.2503    2.1717    33890  
+halofit-wcdm-1mass-nonlinear               1.29979       2.32395       3.34417    0.5604    5.5293    33889  
+halofit-wcdm-2mass-linear                  0.15841       0.17584       0.11563    0.0824    0.2707    36262  
+halofit-wcdm-2mass-cb-linear               0.30996       0.25547       0.36211    0.1826    0.4950    36239  
+halofit-wcdm-2mass-cb-nonlinear            1.61148       2.59902       3.11016    0.7305    4.4913    33858  
+halofit-wcdm-2mass-nonlinear               0.97668       1.82375       2.26379    0.3113    3.9076    33871  
+halofit-wcdm-3mass-linear                  0.12587       0.16273       0.10011    0.0805    0.3405    36135  
+halofit-wcdm-3mass-cb-linear               0.16109       0.11865       0.16741    0.1239    0.3504    36120  
+halofit-wcdm-3mass-cb-nonlinear            1.56173       2.55867       3.27208    0.5925    4.7904    33741  
+halofit-wcdm-3mass-nonlinear               0.86484       1.51759       2.13323    0.3032    3.1054    33753  
+halofit-w0wa-0mass-linear                  0.14812       0.18808       0.14915    0.0883    0.4491    34291  
+halofit-w0wa-0mass-cb-linear               0.14744       0.18641       0.14740    0.0872    0.4492    34291  
+halofit-w0wa-0mass-cb-nonlinear            0.89011       1.60188       1.94132    0.3378    2.6057    32147  
+halofit-w0wa-0mass-nonlinear               0.89011       1.60188       1.94132    0.3378    2.6057    32147  
+halofit-w0wa-1mass-linear                  0.18915       0.26262       0.18927    0.0729    0.4048    34134  
+halofit-w0wa-1mass-cb-linear               0.20859       0.28601       0.20555    0.1150    0.6000    34111  
+halofit-w0wa-1mass-cb-nonlinear            1.62356       2.75754       5.53877    0.4747   11.3250    31891  
+halofit-w0wa-1mass-nonlinear               1.34096       2.25811       3.09451    0.4938    5.3238    31906  
+halofit-w0wa-2mass-linear                  0.16755       0.24992       0.26539    0.1213    0.4167    34138  
+halofit-w0wa-2mass-cb-linear               0.15685       0.20634       0.17220    0.0780    0.3592    34122  
+halofit-w0wa-2mass-cb-nonlinear            0.96243       1.59003       3.78330    0.2967    7.3059    31894  
+halofit-w0wa-2mass-nonlinear               1.38452       2.35745       4.09812    0.4050    6.3077    31903  
+halofit-w0wa-3mass-linear                  0.21761       0.28005       0.17593    0.1018    0.4789    34087  
+halofit-w0wa-3mass-cb-linear               0.16775       0.18036       0.13814    0.0596    0.3590    34066  
+halofit-w0wa-3mass-cb-nonlinear            0.84317       1.56525       2.66867    0.2953    4.4970    31830  
+halofit-w0wa-3mass-nonlinear               1.57827       2.52344       5.03252    0.4150    9.2347    31848  
+mg-boost-linear-bin0                       0.00202       0.00059       0.00060    0.0049    0.0158    10000  test set: sorted (no reshufled set)
+mg-boost-linear-bin1                       0.00381       0.00114       0.00115    0.0020    0.0095    10000  test set: sorted (no reshufled set)
+mg-boost-linear-bin2                       0.00299       0.00078       0.00078    0.0015    0.0099    10000  test set: sorted (no reshufled set)
+mg-boost-linear-bin3                       0.00514       0.00127       0.00127    0.0031    0.0130    10000  test set: sorted (no reshufled set)
+mg-boost-linear-bin4                       0.00483       0.00129       0.00136    0.0018    0.0178    10000  test set: sorted (no reshufled set)
+mg-boost-linear-multibin                   0.03296       0.06733       0.06516    0.0175    0.0739   100000  test set: reshufled
+mg-boost-nonlinear-bin0                        nan       0.01806       0.07622    0.0227    0.1258      663  test set: reshufled
+mg-boost-nonlinear-bin1                        nan       0.32509       0.90863    0.0984    0.9905     1173  test set: reshufled
+mg-boost-nonlinear-bin2                        nan       0.01771       0.05744    0.0151    0.1112      663  test set: reshufled
+mg-boost-nonlinear-bin3                        nan       0.09282       0.16395    0.0699    0.3064      663  test set: reshufled
+mg-boost-nonlinear-bin4                        nan       0.12867       0.47629    0.0758    0.5593     1173  test set: reshufled
+mg-boost-nonlinear-multibin                    nan       0.57077       0.53747    0.0666    0.7301    10842  test set: reshufled
