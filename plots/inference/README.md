@@ -16,11 +16,14 @@ every model except **1bDDM**, whose emulator is trained on CLASS, so **CLASS** (
 |---|---|
 | `<model>-marginals.pdf` | 1-D marginals, one panel per cosmological parameter (paper-figure style). Filled blue = emulator, orange = reference, dotted black = input fiducial. |
 | `<model>-corner.pdf` | Cosmology triangle. Emulator filled, reference unfilled; dashed black = fiducial. |
-| `<model>-corner-full.pdf` | Full triangle of the **emulator** run with every sampled parameter (cosmology + intrinsic alignment, galaxy bias, multiplicative bias and redshift shifts), ~31–34 parameters. *Only for models with a full run.* |
-| `<model>-corner-shift.pdf` | Cosmology parameters only, overlaying the cosmology-only run (filled) against the full run projected onto cosmology (red, dotted): the shift/broadening from opening up the nuisance parameters. *Only for models with a full run.* |
+| `<model>-corner-full.pdf` | Full triangle of the **emulator** run with every sampled parameter (cosmology + intrinsic alignment, galaxy bias, multiplicative bias and redshift shifts), 31–33 parameters. |
+| `<model>-corner-shift.pdf` | Cosmology parameters only, overlaying the cosmology-only run (filled) against the full run projected onto cosmology (red, dotted): the shift/broadening from opening up the nuisance parameters. |
+| `w0wacdm-corner-full-camb-vs-emu.pdf` | The one full-parameter run that was repeated with CAMB: all 33 w₀wₐCDM parameters, emulator (filled) against CAMB (unfilled). |
 
-There is **no full-parameter CAMB run** (CAMB was run cosmology-only), so `-corner-full`
-and `-corner-shift` use the emulator chains; the emulator↔CAMB comparison lives in
+Full-parameter runs exist for `lcdm`, `w0wacdm`, both curvature and both running models;
+`wcdm` and `1bddm` have the cosmology-only `-marginals` and `-corner` plots. CAMB was run
+cosmology-only everywhere except for the w₀wₐCDM full run above, so the other `-corner-full`
+and `-corner-shift` plots show emulator chains and the emulator↔CAMB comparison lives in
 `-marginals` and `-corner`.
 
 ## Models
@@ -33,7 +36,7 @@ and `-corner-shift` use the emulator chains; the emulator↔CAMB comparison live
 | `extended/curvature/`    | `lcdm-curvature` (ΛCDM + Ω_K), `w0wacdm-curvature` (w₀wₐCDM + Ω_K) | CAMB |
 | `extended/running/`      | `lcdm-running` (ΛCDM + α_s), `w0wacdm-running` (w₀wₐCDM + α_s) | CAMB |
 | `extended/1bddm/`        | `1bddm` — one-body decaying dark matter | CLASS |
-| `extended/parametrised_mg/` | `mg-corner-mu-eta`, `mg-corner-sigma` | — (corner only) |
+| `extended/parametrised_mg/` | `mg-corner-mu-eta`, `mg-corner-sigma`, `mg-singlebin-bin{0..4}-corner`, `mg-multibin-corner` | — (emulator only) |
 | `extended/react/`        | `react-cosmo`, `react-extended`, `react-{fr,ndgp,ds,mu}-corner` | — (ReACT is its own reference) |
 
 **Parameterised MG** has no Boltzmann reference chain; these are the paper's
@@ -42,7 +45,11 @@ five independent single-bin posteriors (blue) over cosmology and the per-bin
 gravitational-slip parameters, GR (μ = η = Σ = 1) dashed. `mg-corner-mu-eta` shows the
 per-bin μ_i, η_i; `mg-corner-sigma` the lensing combination Σ_i = μ_i(1 + η_i)/2. The
 high-redshift bins are prior-dominated, as expected for a lensing-dominated 3×2pt data
-vector.
+vector. The remaining six files are the individual emulator triangles behind those
+overlays: `mg-singlebin-bin{0..4}-corner` is the run with μ and η free in one redshift bin
+(bin0 is the lowest, 0 ≤ z < 0.43) and GR elsewhere, over the five cosmological
+parameters plus that bin's μ, η; `mg-multibin-corner` is the joint run with all ten
+μ₁…μ₅, η₁…η₅ free. Dashed lines mark the fiducial (GR) values.
 
 **ReACT** are the halo-model-reaction posteriors from the paper. `react-cosmo` and
 `react-extended` are the two marginal panels — panel (a) the cosmological parameters,

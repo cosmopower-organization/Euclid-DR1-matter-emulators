@@ -24,5 +24,6 @@ The notebooks locate the emulators through the relative path `../emulators`, so 
 and `jax` 0.4.38 on a CPU; timings will differ on other machines.
 
 Notebook `04` points `cloelib` at the files of this repository (first cell) instead of letting it download them
-from Zenodo. It reflects the `cloelib` API of October 2026; the extended families are not shown there because the
-corresponding `cloelib` classes were still being updated to the released files.
+from GitHub, and translates the pre-release file names that `cloelib` may still request. It reflects the `cloelib`
+API of October 2026 (ΛCDM, wCDM, w0waCDM with HMCode2020 and Halofit, curvature and running); decaying dark
+matter and parameterised gravity are shown with the bare files in notebook `03`.

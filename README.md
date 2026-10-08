@@ -83,7 +83,7 @@ pk = np.atleast_2d(emu.predict(params))   # shape (3, 520), P_nl(k, z) in Mpc^3
 # scalar emulators (σ8/fσ8, DDM growth/global) predict the values directly;
 # the DDM distances file stores log10 values and is loaded with probe="custom_log" like P(k)
 s8 = CosmoPowerJAX(probe="custom",
-                   filepath="emulators/lcdm/halofit/halofit-lcdm-1mass-combined-s8-fs8.npz",
+                   filepath="emulators/lcdm/halofit/halofit-lcdm-1mass-s8-fs8.npz",
                    verbose=False)
 params.pop("logT_AGN")                    # not an input of the Halofit-family files
 sigma8, fsigma8 = np.atleast_2d(s8.predict(params)).T
@@ -115,14 +115,14 @@ Worked examples, stored with their outputs, are in [notebooks/](notebooks/):
 
 | Family | Folder | ν variants | Nonlinear prescription | Reference code | Products | Family-specific inputs |
 |---|---|---|---|---|---|---|
-| ΛCDM | `lcdm/hmcode` | 0mass, 1mass, 2degen, 3degen | HMCode2020 | CAMB | P_lin, P_nl, P_cb,lin, P_cb,nl, σ8/fσ8 | `mnu`, `logT_AGN` |
+| ΛCDM | `lcdm/hmcode` | 0mass, 1mass, 2mass, 3mass | HMCode2020 | CAMB | P_lin, P_nl, P_cb,lin, P_cb,nl, σ8/fσ8 | `mnu`, `logT_AGN` |
 | ΛCDM | `lcdm/halofit` | 0mass, 1mass, 2mass, 3mass | Halofit (Takahashi) | CAMB | same | `mnu` |
-| wCDM | `wcdm/hmcode` | 0mass, 1mass, 2degen, 3degen | HMCode2020 | CAMB | same | `w`, `mnu`, `logT_AGN` |
+| wCDM | `wcdm/hmcode` | 0mass, 1mass, 2mass, 3mass | HMCode2020 | CAMB | same | `w`, `mnu`, `logT_AGN` |
 | wCDM | `wcdm/halofit` | 0mass, 1mass, 2mass, 3mass | Halofit (Takahashi) | CAMB | same | `w`, `mnu` |
-| w0waCDM | `w0wa/hmcode` | 0mass, 1mass, 2degen, 3degen | HMCode2020 | CAMB | same | `w0`, `wa`, `mnu`, `logT_AGN` |
+| w0waCDM | `w0wa/hmcode` | 0mass, 1mass, 2mass, 3mass | HMCode2020 | CAMB | same | `w0`, `wa`, `mnu`, `logT_AGN` |
 | w0waCDM | `w0wa/halofit` | 0mass, 1mass, 2mass, 3mass | Halofit (Takahashi) | CAMB | same | `w0`, `wa`, `mnu` |
-| Curvature, ΛCDM and w0waCDM | `extended/curvature` | 0mass, 1mass, 3degen | HMCode2020 | CAMB | same | `omk` (+ `w0`, `wa`), `mnu`, `logT_AGN` |
-| Running index, ΛCDM and w0waCDM | `extended/running` | 0mass, 1mass, 3degen | HMCode2020 | CAMB | same | `alpha_s` (+ `w0`, `wa`), `mnu`, `logT_AGN` |
+| Curvature, ΛCDM and w0waCDM | `extended/curvature` | 0mass, 1mass, 3mass | HMCode2020 | CAMB | same | `omk` (+ `w0`, `wa`), `mnu`, `logT_AGN` |
+| Running index, ΛCDM and w0waCDM | `extended/running` | 0mass, 1mass, 3mass | HMCode2020 | CAMB | same | `alpha_s` (+ `w0`, `wa`), `mnu`, `logT_AGN` |
 | One-body decaying DM | `extended/1bddm` | 3 degenerate, Σmν free (`m_ncdm`) | none emulated; boost formula applied at run time | CLASS | P_lin, P_cb,lin, σ8/fσ8, H/D_A/D_L, σ8/Ω_m/r_drag | `f_dcdm`, `Gamma_times_f`, `m_ncdm` |
 | Parameterised MG, binned μ(z), η(z) | `extended/parametrised_mg` | fixed (not an input) | COLA boost | CLASS (linear), COLA (nonlinear) | linear and nonlinear boosts P_MG/P_ΛCDM | `mu`, `eta` or `mu1..5`, `eta1..5` |
 | Halo-model reaction: f(R), nDGP, Dark Scattering, μ(k,z) | `extended/react` | — | R × HMCode2020 | ReACT | nonlinear boost | **not distributed here**, see [emulators/extended/react/README.md](emulators/extended/react/README.md) |
@@ -139,11 +139,10 @@ name selects how N_eff = 3.044 is split between massless and massive species:
 |---|---|---|
 | `0mass` | 3.044 massless, no massive species | no |
 | `1mass` | 1 massive eigenstate carrying Σmν, 2.044 massless | yes |
-| `2degen` / `2mass` | 2 degenerate massive eigenstates, 1.044 massless (not described in the paper) | yes |
-| `3degen` / `3mass` | 3 degenerate massive eigenstates, 0.044 massless | yes |
+| `2mass` | 2 degenerate massive eigenstates, 1.044 massless (not described in the paper) | yes |
+| `3mass` | 3 degenerate massive eigenstates, 0.044 massless | yes |
 
-`Nmass` in the Halofit files and `Ndegen` in the HMCode2020 files mean the same
-thing. `mnu` is always the total mass sum Σmν in eV.
+`mnu` is always the total mass sum Σmν in eV, shared equally by the massive eigenstates.
 
 ### Nonlinear prescriptions
 
@@ -176,7 +175,7 @@ thing. `mnu` is always the total mass sum Σmν in eV.
 | prescription prefix | `halofit-` for the Halofit files; no prefix means HMCode2020 |
 | extension prefix | `curvature-` (Ωk), `nrun-` (αs) |
 | family | `lcdm`, `wcdm`, `w0wa` |
-| ν tag | `0mass`, `1mass`, `2degen`, `3degen` (HMCode2020 files), `0mass`, `1mass`, `2mass`, `3mass` (Halofit files) |
+| ν tag | `0mass`, `1mass`, `2mass`, `3mass` (the curvature and running families have no `2mass`) |
 | product | see below |
 
 | Product suffix | Quantity | `probe` for loading | Extra input |
@@ -185,7 +184,7 @@ thing. `mnu` is always the total mass sum Σmν in eV.
 | `-nonlinear` | P_nl(k, z), total matter | `custom_log` | `logT_AGN` (HMCode2020 files only) |
 | `-cb-linear` | P_cb,lin(k, z), CDM + baryons | `custom_log` | — |
 | `-cb-nonlinear` | P_cb,nl(k, z) | `custom_log` | `logT_AGN` (HMCode2020 files only) |
-| `-s8-fs8`, `-combined-s8-fs8` | [σ8(z), fσ8(z)] | `custom` | `logT_AGN` in the HMCode2020-family files (physically irrelevant for σ8; any in-range value works, `cloelib` passes 7.6) |
+| `-s8-fs8` | [σ8(z), fσ8(z)] | `custom` | `logT_AGN` in the HMCode2020-family files (physically irrelevant for σ8; any in-range value works, `cloelib` passes 7.6) |
 
 Special families:
 
@@ -329,9 +328,10 @@ the reference-code accuracy and inference-cost figures of Appendix A are in
 ## Use in the Euclid likelihood
 
 The emulators are exposed in `cloelib` through the `Perturbations` protocol
-(`cloelib.cosmology.cosmopower_jax_cosmology`), which downloads the files by name
-from the Zenodo record and returns P_mm(k, z), P_cb(k, z), σ8(z) and fσ8(z) to
-`cloelike`. They can equally be plugged into any other framework that accepts an
+(`cloelib.cosmology.cosmopower_jax_cosmology`), which downloads each file it needs
+from this repository by name, caches it, and returns P_mm(k, z), P_cb(k, z), σ8(z)
+and fσ8(z) to `cloelike`. File names are therefore part of the interface: renaming
+a file here requires the matching change in `cloelib`. They can equally be plugged into any other framework that accepts an
 external P(k, z) provider (CosmoSIS, CCL, …).
 
 ---

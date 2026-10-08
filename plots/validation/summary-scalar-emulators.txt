@@ -2,55 +2,55 @@ Scalar emulators: relative-error percentiles [%] per output quantity.
 
 emulator                                     output       68%       95%       99%     99.9%   n_test  note
 ----------------------------------------------------------------------------------------------------------
-wcdm-2degen-s8-fs8                           sigma8    0.0369    0.1559    0.4488    2.9741    32076  
+wcdm-2mass-s8-fs8                           sigma8    0.0369    0.1559    0.4488    2.9741    32076  
                                             fsigma8    0.0431    0.1911    0.6144    6.8248    32076  
-curvature-lcdm-0mass-combined-s8-fs8         sigma8    0.0157    0.0728    0.1848    0.5126    36626  
+curvature-lcdm-0mass-s8-fs8         sigma8    0.0157    0.0728    0.1848    0.5126    36626  
                                             fsigma8    0.0377    0.1373    0.3090    0.8067    36626  
-curvature-lcdm-1mass-combined-s8-fs8         sigma8    0.0661    0.1243    0.2074    0.4956    32419  
+curvature-lcdm-1mass-s8-fs8         sigma8    0.0661    0.1243    0.2074    0.4956    32419  
                                             fsigma8    0.1035    0.2492    0.4452    0.9290    32419  
-curvature-lcdm-3degen-combined-s8-fs8        sigma8    0.0319    0.1147    0.2649    0.7425    31479  
+curvature-lcdm-3mass-s8-fs8        sigma8    0.0319    0.1147    0.2649    0.7425    31479  
                                             fsigma8    0.0224    0.0930    0.2401    0.8691    31479  
-curvature-w0wa-0mass-combined-s8-fs8         sigma8    0.0536    0.1593    0.3817    1.3186    30287  
+curvature-w0wa-0mass-s8-fs8         sigma8    0.0536    0.1593    0.3817    1.3186    30287  
                                             fsigma8    0.0575    0.2119    0.6014    2.1907    30287  
-curvature-w0wa-1mass-combined-s8-fs8         sigma8    0.0403    0.1587    0.4287    1.4643    28887  
+curvature-w0wa-1mass-s8-fs8         sigma8    0.0403    0.1587    0.4287    1.4643    28887  
                                             fsigma8    0.0455    0.1903    0.5701    2.2893    28887  
-curvature-w0wa-3degen-combined-s8-fs8        sigma8    0.1092    0.2640    0.5320    1.5766    28518  
+curvature-w0wa-3mass-s8-fs8        sigma8    0.1092    0.2640    0.5320    1.5766    28518  
                                             fsigma8    0.1002    0.2790    0.6532    2.6031    28518  
-nrun-lcdm-0mass-combined-s8-fs8              sigma8    0.0291    0.0979    0.3066    1.1371     6242  
+nrun-lcdm-0mass-s8-fs8              sigma8    0.0291    0.0979    0.3066    1.1371     6242  
                                             fsigma8    0.0464    0.1479    0.4344    1.3455     6242  
-nrun-lcdm-1mass-combined-s8-fs8              sigma8    0.0448    0.1071    0.2149    0.4248    19788  
+nrun-lcdm-1mass-s8-fs8              sigma8    0.0448    0.1071    0.2149    0.4248    19788  
                                             fsigma8    0.0403    0.1172    0.2581    0.7285    19788  
-nrun-lcdm-3degen-combined-s8-fs8             sigma8    0.0099    0.0603    0.1672    0.3990    17236  
+nrun-lcdm-3mass-s8-fs8             sigma8    0.0099    0.0603    0.1672    0.3990    17236  
                                             fsigma8    0.0130    0.0724    0.2006    0.8254    17236  
-nrun-w0wa-0mass-combined-s8-fs8              sigma8    0.0180    0.1205    0.3889    1.6229    17711  
+nrun-w0wa-0mass-s8-fs8              sigma8    0.0180    0.1205    0.3889    1.6229    17711  
                                             fsigma8    0.0251    0.1636    0.5532    2.9825    17711  
-nrun-w0wa-1mass-combined-s8-fs8              sigma8    0.0514    0.1556    0.3940    1.5328    16975  
+nrun-w0wa-1mass-s8-fs8              sigma8    0.0514    0.1556    0.3940    1.5328    16975  
                                             fsigma8    0.0882    0.2482    0.6366    2.6305    16975  
-nrun-w0wa-3degen-combined-s8-fs8             sigma8    0.0147    0.0832    0.2206    0.7799    18566  
+nrun-w0wa-3mass-s8-fs8             sigma8    0.0147    0.0832    0.2206    0.7799    18566  
                                             fsigma8    0.0190    0.1056    0.3127    1.6901    18566  
-halofit-lcdm-0mass-combined-s8-fs8           sigma8    0.0050    0.0264    0.0665    0.1934    35557  
+halofit-lcdm-0mass-s8-fs8           sigma8    0.0050    0.0264    0.0665    0.1934    35557  
                                             fsigma8    0.0093    0.0337    0.0841    0.2202    35557  
-halofit-lcdm-1mass-combined-s8-fs8           sigma8    0.0122    0.0523    0.1275    0.3328    35340  
+halofit-lcdm-1mass-s8-fs8           sigma8    0.0122    0.0523    0.1275    0.3328    35340  
                                             fsigma8    0.0155    0.0755    0.1883    0.4809    35340  
-halofit-lcdm-2mass-combined-s8-fs8           sigma8    0.0410    0.1382    0.2675    0.5583    12559  
+halofit-lcdm-2mass-s8-fs8           sigma8    0.0410    0.1382    0.2675    0.5583    12559  
                                             fsigma8    0.0412    0.1433    0.2852    0.6325    12559  
-halofit-lcdm-3mass-combined-s8-fs8           sigma8    0.0126    0.0491    0.1230    0.3053    35349  
+halofit-lcdm-3mass-s8-fs8           sigma8    0.0126    0.0491    0.1230    0.3053    35349  
                                             fsigma8    0.0107    0.0531    0.1403    0.3603    35349  
-halofit-wcdm-0mass-combined-s8-fs8           sigma8    0.0159    0.0575    0.1592    0.4073    40392  
+halofit-wcdm-0mass-s8-fs8           sigma8    0.0159    0.0575    0.1592    0.4073    40392  
                                             fsigma8    0.0686    0.1651    0.3052    0.6370    40392  
-halofit-wcdm-1mass-combined-s8-fs8           sigma8    0.0138    0.0691    0.1845    0.4982    39983  
+halofit-wcdm-1mass-s8-fs8           sigma8    0.0138    0.0691    0.1845    0.4982    39983  
                                             fsigma8    0.0174    0.0836    0.2209    0.6995    39983  
-halofit-wcdm-2mass-combined-s8-fs8           sigma8    0.0637    0.1838    0.3805    0.7119    40185  
+halofit-wcdm-2mass-s8-fs8           sigma8    0.0637    0.1838    0.3805    0.7119    40185  
                                             fsigma8    0.0226    0.0690    0.1545    0.4558    40185  
-halofit-wcdm-3mass-combined-s8-fs8           sigma8    0.0105    0.0508    0.1220    0.3069    40042  
+halofit-wcdm-3mass-s8-fs8           sigma8    0.0105    0.0508    0.1220    0.3069    40042  
                                             fsigma8    0.0126    0.0626    0.1559    0.5484    40042  
-halofit-w0wa-0mass-combined-s8-fs8           sigma8    0.0228    0.0818    0.2025    0.6497    37671  
+halofit-w0wa-0mass-s8-fs8           sigma8    0.0228    0.0818    0.2025    0.6497    37671  
                                             fsigma8    0.0217    0.0824    0.2185    1.1093    37671  
-halofit-w0wa-1mass-combined-s8-fs8           sigma8    0.0204    0.0844    0.2241    0.8426    37484  
+halofit-w0wa-1mass-s8-fs8           sigma8    0.0204    0.0844    0.2241    0.8426    37484  
                                             fsigma8    0.0222    0.1029    0.2885    1.2429    37484  
-halofit-w0wa-2mass-combined-s8-fs8           sigma8    0.0389    0.1156    0.2521    0.7614    37477  
+halofit-w0wa-2mass-s8-fs8           sigma8    0.0389    0.1156    0.2521    0.7614    37477  
                                             fsigma8    0.0766    0.2305    0.4902    1.3592    37477  
-halofit-w0wa-3mass-combined-s8-fs8           sigma8    0.0241    0.0935    0.2515    0.9205    36961  
+halofit-w0wa-3mass-s8-fs8           sigma8    0.0241    0.0935    0.2515    0.9205    36961  
                                             fsigma8    0.0233    0.1150    0.3382    1.4692    36961  
 ddm-1body-neutrino-distances                    H_z    0.0106    0.0273    0.0485    0.1068    22391  
                                               D_A_z    0.0113    0.0362    0.0967    1.6366    22391  
