@@ -28,14 +28,6 @@ nrun-w0wa-1mass-combined-s8-fs8              sigma8    0.0514    0.1556    0.394
                                             fsigma8    0.0882    0.2482    0.6366    2.6305    16975  
 nrun-w0wa-3degen-combined-s8-fs8             sigma8    0.0147    0.0832    0.2206    0.7799    18566  
                                             fsigma8    0.0190    0.1056    0.3127    1.6901    18566  
-ddm-1body-combined-distances                    H_z    0.0473    0.1304    0.2516    0.5466    25199  
-                                              D_A_z    0.0539    0.1751    0.5140    2.6222    25199  
-                                              D_L_z    0.0579    0.1821    0.5001    2.5327    25199  
-ddm-1body-combined-global                    sigma8    0.0643    0.1746    0.2957    0.5167    25199  
-                                            Omega_m    0.1678    0.4249    0.7427    1.3129    25199  
-                                                r_d    0.0114    0.0178    0.0221    0.0251    25199  
-ddm-1body-combined-growth                  sigma8_z    0.0169    0.0322    0.0503    0.0969    25199  
-                                          fsigma8_z    0.0261    0.0578    0.0858    0.1516    25199  
 halofit-lcdm-0mass-combined-s8-fs8           sigma8    0.0050    0.0264    0.0665    0.1934    35557  
                                             fsigma8    0.0093    0.0337    0.0841    0.2202    35557  
 halofit-lcdm-1mass-combined-s8-fs8           sigma8    0.0122    0.0523    0.1275    0.3328    35340  
@@ -60,3 +52,11 @@ halofit-w0wa-2mass-combined-s8-fs8           sigma8    0.0389    0.1156    0.252
                                             fsigma8    0.0766    0.2305    0.4902    1.3592    37477  
 halofit-w0wa-3mass-combined-s8-fs8           sigma8    0.0241    0.0935    0.2515    0.9205    36961  
                                             fsigma8    0.0233    0.1150    0.3382    1.4692    36961  
+ddm-1body-neutrino-distances                    H_z    0.0106    0.0273    0.0485    0.1068    22391  
+                                              D_A_z    0.0113    0.0362    0.0967    1.6366    22391  
+                                              D_L_z    0.0106    0.0367    0.1027    1.7131    22391  
+ddm-1body-neutrino-growth                  sigma8_z    0.0156    0.0320    0.0511    0.0994    22391  
+                                          fsigma8_z    0.0345    0.0917    0.1508    0.2621    22391  
+ddm-1body-neutrino-global                    sigma8    0.0641    0.1994    0.3681    0.7578    22391  
+                                            Omega_m    0.1516    0.4394    0.7530    1.4269    22391  
+                                                r_d    0.0115    0.0187    0.0235    0.0281    22391  

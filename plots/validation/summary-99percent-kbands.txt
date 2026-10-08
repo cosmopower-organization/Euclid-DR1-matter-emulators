@@ -98,8 +98,8 @@ nrun-w0wa-3degen-linear                    0.49503       0.59498       0.40531  
 nrun-w0wa-3degen-cb-linear                 0.30998       0.37388       0.27987    0.1301    0.6822    16695  
 nrun-w0wa-3degen-cb-nonlinear              0.51042       0.85067       1.55784    0.2537    2.6619    17009  
 nrun-w0wa-3degen-nonlinear                 0.65792       1.07659       1.76021    0.2937    3.2772    17012  
-ddm-1body-combined-linear                  0.14403       0.11748       0.28899    0.4805    2.0284    16800  
-ddm-1body-combined-cb-linear               0.50529       1.63851       1.73801    0.9871    3.0956    16800  NO P_cb test set: cross-check against total-matter pk_lin only
+ddm-1body-neutrino-linear                  0.26692       0.16831       0.32221    0.4695    1.9281    22340
+ddm-1body-neutrino-cb-linear               0.14538       0.15490       0.32156    0.4899    2.0048    22332
 halofit-wcdm-0mass-linear                  0.34185       0.16471       0.14128    0.1905    0.5259    36500  
 halofit-wcdm-0mass-cb-linear               0.16050       0.21410       0.14534    0.1428    0.5935    36500  
 halofit-wcdm-0mass-cb-nonlinear            0.59360       1.03787       1.17907    0.2273    1.6378    34283  

@@ -43,7 +43,7 @@ dr1-matter-emulators/
 │   ├── validation/                 # held-out-test accuracy plots + percentile data
 │   ├── accuracy-comparison/        # reference-code (CAMB/CLASS) accuracy + inference-cost figures (Appendix A)
 │   └── inference/                  # Euclid DR1 3×2pt posteriors, one set per model, emulator vs CAMB/CLASS
-└── notebooks/                      # usage examples
+└── notebooks/                      # worked examples (see notebooks/README.md)
 ```
 
 `hmcode/` and `halofit/` hold the same cosmological family with two different
@@ -98,6 +98,17 @@ For a single sample `predict` returns a 1-D array, hence the `np.atleast_2d`.
 no error and returns no NaN. Keeping the parameters inside the ranges listed below
 is the user's responsibility.
 
+### Notebooks
+
+Worked examples, stored with their outputs, are in [notebooks/](notebooks/):
+
+| Notebook | Contents |
+|---|---|
+| `01_quickstart_standalone` | loading, P(k, z), P_cb, σ8/fσ8, your own k grid, batch speed, derivatives, bounds check |
+| `02_model_families` | neutrino variants, wCDM / w0waCDM, HMCode2020 vs Halofit, curvature, running, cross-family consistency |
+| `03_beyond_lcdm_ddm_and_mg` | decaying dark matter (including the nonlinear reconstruction) and the parameterised-gravity boosts |
+| `04_cloelib_interface` | the same emulators through `cloelib`, compared and timed against CAMB |
+
 ---
 
 ## The emulator suite
@@ -112,7 +123,7 @@ is the user's responsibility.
 | w0waCDM | `w0wa/halofit` | 0mass, 1mass, 2mass, 3mass | Halofit (Takahashi) | CAMB | same | `w0`, `wa`, `mnu` |
 | Curvature, ΛCDM and w0waCDM | `extended/curvature` | 0mass, 1mass, 3degen | HMCode2020 | CAMB | same | `omk` (+ `w0`, `wa`), `mnu`, `logT_AGN` |
 | Running index, ΛCDM and w0waCDM | `extended/running` | 0mass, 1mass, 3degen | HMCode2020 | CAMB | same | `alpha_s` (+ `w0`, `wa`), `mnu`, `logT_AGN` |
-| One-body decaying DM | `extended/1bddm` | 3 degenerate, Σmν = 0.06 eV fixed | none emulated; boost formula applied at run time | CLASS | P_lin, P_cb,lin, σ8/fσ8, H/D_A/D_L, σ8/Ω_m/r_drag | `f_dcdm`, `Gamma_times_f` |
+| One-body decaying DM | `extended/1bddm` | 3 degenerate, Σmν free (`m_ncdm`) | none emulated; boost formula applied at run time | CLASS | P_lin, P_cb,lin, σ8/fσ8, H/D_A/D_L, σ8/Ω_m/r_drag | `f_dcdm`, `Gamma_times_f`, `m_ncdm` |
 | Parameterised MG, binned μ(z), η(z) | `extended/parametrised_mg` | fixed (not an input) | COLA boost | CLASS (linear), COLA (nonlinear) | linear and nonlinear boosts P_MG/P_ΛCDM | `mu`, `eta` or `mu1..5`, `eta1..5` |
 | Halo-model reaction: f(R), nDGP, Dark Scattering, μ(k,z) | `extended/react` | — | R × HMCode2020 | ReACT | nonlinear boost | **not distributed here**, see [emulators/extended/react/README.md](emulators/extended/react/README.md) |
 
@@ -180,10 +191,10 @@ Special families:
 
 | File | Quantity | `probe` |
 |---|---|---|
-| `ddm-1body-combined-linear`, `-cb-linear` | P_lin, P_cb,lin | `custom_log` |
-| `ddm-1body-combined-growth` | [σ8(z), fσ8(z)] | `custom` |
-| `ddm-1body-combined-distances` | [H(z) in Mpc⁻¹, D_A(z) in Mpc, D_L(z) in Mpc] — stored as log10, so load with `custom_log` | `custom_log` |
-| `ddm-1body-combined-global` | [σ8(z=0), Ω_m, r_drag] — no `z` input | `custom` |
+| `ddm-1body-neutrino-linear`, `-cb-linear` | P_lin, P_cb,lin | `custom_log` |
+| `ddm-1body-neutrino-growth` | [σ8(z), fσ8(z)] | `custom` |
+| `ddm-1body-neutrino-distances` | [H(z) in Mpc⁻¹, D_A(z) in Mpc, D_L(z) in Mpc] — stored as log10, so load with `custom_log` | `custom_log` |
+| `ddm-1body-neutrino-global` | [σ8(z=0), Ω_m, r_drag] — no `z` input | `custom` |
 | `mg-boost-linear-bin0` … `bin4` | linear boost, μ and η modified in one redshift bin | `custom_log` |
 | `mg-boost-linear-multibin` | linear boost, `mu1..mu5`, `eta1..eta5` all free | `custom_log` |
 | `mg-boost-nonlinear-bin0` … `bin4` | nonlinear boost, μ only (η does not enter the nonlinear boost) | `custom_log` |
@@ -191,6 +202,9 @@ Special families:
 
 The MG redshift bins are, in order of increasing redshift (`bin0` … `bin4` ↔ bins 1 … 5):
 0 ≤ z < 0.43, 0.43 ≤ z < 0.91, 0.91 ≤ z < 1.47, 1.47 ≤ z < 2.15, 2.15 ≤ z < 3.0.
+A single-bin emulator is trained only up to the top edge of its own bin and
+extrapolates badly above it: query it for z ≤ z_top and set the boost to 1 above
+(z_top = 3 for the multi-bin files). The MG boost grids are in h/Mpc, see below.
 
 Two files keep a historical misspelling because `cloelib` requests them from
 Zenodo by exactly these names: `wcdm/hmcode/wcdm-1mass-nolinear.npz` and
@@ -209,7 +223,7 @@ Names as stored in the files (`emu.parameters`):
 | `H0` | H0 in km s⁻¹ Mpc⁻¹ | all CAMB families |
 | `ns` | scalar spectral index | all CAMB families |
 | `lnAs` | ln(10¹⁰ A_s), pivot 0.05 Mpc⁻¹ | all CAMB families |
-| `z` | redshift | every emulator except `ddm-1body-combined-global` |
+| `z` | redshift | every emulator except `ddm-1body-neutrino-global` |
 | `mnu` | Σmν in eV | massive-neutrino variants |
 | `logT_AGN` | log10(T_AGN / K), HMCode2020 feedback | HMCode2020 nonlinear and σ8/fσ8 files |
 | `w` | constant dark-energy equation of state | wCDM |
@@ -219,6 +233,7 @@ Names as stored in the files (`emu.parameters`):
 | `omega_b`, `omega_cdm_tot`, `h`, `n_s`, `ln10^{10}A_s` | ω_b, **total** (stable + decaying) ω_cdm, h, n_s, ln(10¹⁰ A_s) | 1bDDM (CLASS) |
 | `f_dcdm` | decaying fraction of the dark matter | 1bDDM |
 | `Gamma_times_f` | Γ_dcdm · f_dcdm in Gyr⁻¹ | 1bDDM |
+| `m_ncdm` | Σmν in eV, shared equally by three degenerate species | 1bDDM |
 | `Omega_m`, `Omega_b`, `h`, `ns`, `lnAs` | Ω_m, Ω_b, h, n_s, ln(10¹⁰ A_s) | parameterised MG |
 | `mu`, `eta` / `mu1..mu5`, `eta1..eta5` | modification of the Poisson equation and gravitational slip (GR: μ = η = 1) | parameterised MG |
 
@@ -246,8 +261,8 @@ extended box:
 | Ω_k | [−0.1, 0.1] | [−0.3, 0.3] |
 
 One-body DDM (CLASS, z ∈ [0, 3]): f_dcdm ∈ [0, 1], Γ_dcdm f_dcdm ∈ [0, 0.0316] Gyr⁻¹
-(the calibration domain of the Hubert et al. 2021 fitting formula); the cosmological
-box follows Table 2 of that paper.
+(the calibration domain of the Hubert et al. 2021 fitting formula), Σmν (`m_ncdm`)
+∈ [0, 1] eV; the cosmological box follows Table 2 of that paper.
 
 Parameterised MG (COLA boosts):
 
@@ -268,16 +283,18 @@ file (`param_train_mean`, `param_train_std`).
 
 ## Outputs, units and grids
 
-* k is in Mpc⁻¹ and P(k) in Mpc³ (CAMB `hubble_units=False`, `k_hunit=False`); no
-  factors of h anywhere.
+* For the CAMB families and 1bDDM, k is in Mpc⁻¹ and P(k) in Mpc³ (CAMB
+  `hubble_units=False`, `k_hunit=False`); no factors of h anywhere. The one exception
+  is the parameterised-MG family, whose boost grids are in h/Mpc.
 * The CAMB families share one grid of 520 k-modes from 1.0 × 10⁻⁵ to 49.2 Mpc⁻¹
   (log-spaced, denser at high k), stored in the `modes` key of each file. The
   curvature emulators use a reduced grid of 471 modes starting at 5.3 × 10⁻⁴ Mpc⁻¹,
   because non-zero curvature changes the lowest available k.
 * 1bDDM: same 520-mode grid, z ∈ [0, 3].
-* Parameterised MG boosts: single-bin linear 800 modes on [10⁻⁴, 10], multi-bin
-  linear 512 modes on [10⁻⁴, 10], nonlinear 1024 modes on [0.016, 12.6]
-  (the COLA measurement grid).
+* Parameterised MG boosts, grids in **h/Mpc**: single-bin linear 800 modes on
+  [10⁻⁴, 10], multi-bin linear 512 modes on [10⁻⁴, 10], nonlinear 1024 modes on
+  [0.016, 12.6] (the COLA measurement grid). Convert with k[Mpc⁻¹] = h · k[h/Mpc]
+  before multiplying a boost onto a ΛCDM spectrum from the rest of the suite.
 * Scalar emulators return the listed quantities in the order given above; the
   DDM distances are H(z) in Mpc⁻¹ and D_A(z), D_L(z) in Mpc (CLASS units).
 

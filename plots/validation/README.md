@@ -38,6 +38,8 @@ Note that the paper's master table quotes a different statistic (median of the
   available when the validation was run.
 * `lcdm/halofit`: only the σ8/fσ8 plots — the P(k) test sets for the ΛCDM Halofit
   variants were not available.
+* `extended/parametrised_mg`: the x-axis label of these plots reads Mpc⁻¹, but the
+  MG boost grids are in h/Mpc (see the root README); read the axis as h/Mpc.
 * `extended/react`: the halo-model-reaction emulators are not distributed here
   (see `emulators/extended/react/README.md`); their validation is in the
   respective MGemu papers.
