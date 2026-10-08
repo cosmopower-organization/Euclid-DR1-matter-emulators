@@ -137,7 +137,7 @@ name selects how N_eff = 3.044 is split between massless and massive species:
 
 | Tag | Setup | `mnu` input |
 |---|---|---|
-| `0mass` (no tag at all in `*/hmcode/`, e.g. `lcdm-linear.npz`) | 3.044 massless, no massive species | no |
+| `0mass` | 3.044 massless, no massive species | no |
 | `1mass` | 1 massive eigenstate carrying Σmν, 2.044 massless | yes |
 | `2degen` / `2mass` | 2 degenerate massive eigenstates, 1.044 massless (not described in the paper) | yes |
 | `3degen` / `3mass` | 3 degenerate massive eigenstates, 0.044 massless | yes |
@@ -176,7 +176,7 @@ thing. `mnu` is always the total mass sum Σmν in eV.
 | prescription prefix | `halofit-` for the Halofit files; no prefix means HMCode2020 |
 | extension prefix | `curvature-` (Ωk), `nrun-` (αs) |
 | family | `lcdm`, `wcdm`, `w0wa` |
-| ν tag | `0mass`, `1mass`, `2degen`, `3degen`, `2mass`, `3mass`; omitted for massless in `*/hmcode/` |
+| ν tag | `0mass`, `1mass`, `2degen`, `3degen` (HMCode2020 files), `0mass`, `1mass`, `2mass`, `3mass` (Halofit files) |
 | product | see below |
 
 | Product suffix | Quantity | `probe` for loading | Extra input |
@@ -206,9 +206,7 @@ A single-bin emulator is trained only up to the top edge of its own bin and
 extrapolates badly above it: query it for z ≤ z_top and set the boost to 1 above
 (z_top = 3 for the multi-bin files). The MG boost grids are in h/Mpc, see below.
 
-Two files keep a historical misspelling because `cloelib` requests them from
-Zenodo by exactly these names: `wcdm/hmcode/wcdm-1mass-nolinear.npz` and
-`wcdm/hmcode/wcdm-1mass-cb-nolinear.npz` (they are the nonlinear emulators).
+Every emulator file has the same stem as its validation plot in `plots/validation/`.
 
 ---
 

@@ -11,6 +11,11 @@ P(k) emulators return P in Mpc³ when loaded with `probe="custom_log"`; scalar e
 
 | File | Inputs | Output | n_out | k_min | k_max |
 |---|---|---|---|---|---|
+| `lcdm-0mass-cb-linear.npz` | ombh2, omch2, H0, ns, lnAs, z | P_cb,lin(k,z) | 520 | 1e-05 | 49.2 |
+| `lcdm-0mass-cb-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, z, logT_AGN | P_cb,nl(k,z) | 520 | 1e-05 | 49.2 |
+| `lcdm-0mass-linear.npz` | ombh2, omch2, H0, ns, lnAs, z | P_lin(k,z) | 520 | 1e-05 | 49.2 |
+| `lcdm-0mass-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, z, logT_AGN | P_nl(k,z) | 520 | 1e-05 | 49.2 |
+| `lcdm-0mass-s8-fs8.npz` | ombh2, omch2, H0, ns, lnAs, z, logT_AGN | σ8(z), fσ8(z) | 2 | – | – |
 | `lcdm-1mass-cb-linear.npz` | ombh2, omch2, H0, ns, lnAs, z, mnu | P_cb,lin(k,z) | 520 | 1e-05 | 49.2 |
 | `lcdm-1mass-cb-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, z, mnu, logT_AGN | P_cb,nl(k,z) | 520 | 1e-05 | 49.2 |
 | `lcdm-1mass-linear.npz` | ombh2, omch2, H0, ns, lnAs, z, mnu | P_lin(k,z) | 520 | 1e-05 | 49.2 |
@@ -26,11 +31,6 @@ P(k) emulators return P in Mpc³ when loaded with `probe="custom_log"`; scalar e
 | `lcdm-3degen-linear.npz` | ombh2, omch2, H0, ns, lnAs, z, mnu | P_lin(k,z) | 520 | 1e-05 | 49.2 |
 | `lcdm-3degen-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, z, mnu, logT_AGN | P_nl(k,z) | 520 | 1e-05 | 49.2 |
 | `lcdm-3degen-s8-fs8.npz` | ombh2, omch2, H0, ns, lnAs, z, mnu, logT_AGN | σ8(z), fσ8(z) | 2 | – | – |
-| `lcdm-cb-linear.npz` | ombh2, omch2, H0, ns, lnAs, z | P_cb,lin(k,z) | 520 | 1e-05 | 49.2 |
-| `lcdm-cb-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, z, logT_AGN | P_cb,nl(k,z) | 520 | 1e-05 | 49.2 |
-| `lcdm-linear.npz` | ombh2, omch2, H0, ns, lnAs, z | P_lin(k,z) | 520 | 1e-05 | 49.2 |
-| `lcdm-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, z, logT_AGN | P_nl(k,z) | 520 | 1e-05 | 49.2 |
-| `lcdm-s8-fs8.npz` | ombh2, omch2, H0, ns, lnAs, z, logT_AGN | σ8(z), fσ8(z) | 2 | – | – |
 
 ## `emulators/lcdm/halofit/` — ΛCDM — Halofit
 
@@ -65,10 +65,15 @@ P(k) emulators return P in Mpc³ when loaded with `probe="custom_log"`; scalar e
 
 | File | Inputs | Output | n_out | k_min | k_max |
 |---|---|---|---|---|---|
+| `wcdm-0mass-cb-linear.npz` | ombh2, omch2, H0, ns, lnAs, w, z | P_cb,lin(k,z) | 520 | 1e-05 | 49.2 |
+| `wcdm-0mass-cb-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, w, z, logT_AGN | P_cb,nl(k,z) | 520 | 1e-05 | 49.2 |
+| `wcdm-0mass-linear.npz` | ombh2, omch2, H0, ns, lnAs, w, z | P_lin(k,z) | 520 | 1e-05 | 49.2 |
+| `wcdm-0mass-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, w, z, logT_AGN | P_nl(k,z) | 520 | 1e-05 | 49.2 |
+| `wcdm-0mass-s8-fs8.npz` | ombh2, omch2, H0, ns, lnAs, w, z, logT_AGN | σ8(z), fσ8(z) | 2 | – | – |
 | `wcdm-1mass-cb-linear.npz` | ombh2, omch2, H0, ns, lnAs, w, z, mnu | P_cb,lin(k,z) | 520 | 1e-05 | 49.2 |
-| `wcdm-1mass-cb-nolinear.npz` | ombh2, omch2, H0, ns, lnAs, w, z, mnu, logT_AGN | P_cb,nl(k,z) | 520 | 1e-05 | 49.2 |
+| `wcdm-1mass-cb-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, w, z, mnu, logT_AGN | P_cb,nl(k,z) | 520 | 1e-05 | 49.2 |
 | `wcdm-1mass-linear.npz` | ombh2, omch2, H0, ns, lnAs, w, z, mnu | P_lin(k,z) | 520 | 1e-05 | 49.2 |
-| `wcdm-1mass-nolinear.npz` | ombh2, omch2, H0, ns, lnAs, w, z, mnu, logT_AGN | P_nl(k,z) | 520 | 1e-05 | 49.2 |
+| `wcdm-1mass-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, w, z, mnu, logT_AGN | P_nl(k,z) | 520 | 1e-05 | 49.2 |
 | `wcdm-1mass-s8-fs8.npz` | ombh2, omch2, H0, ns, lnAs, w, z, mnu, logT_AGN | σ8(z), fσ8(z) | 2 | – | – |
 | `wcdm-2degen-cb-linear.npz` | ombh2, omch2, H0, ns, lnAs, w, z, mnu | P_cb,lin(k,z) | 520 | 1e-05 | 49.2 |
 | `wcdm-2degen-cb-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, w, z, mnu, logT_AGN | P_cb,nl(k,z) | 520 | 1e-05 | 49.2 |
@@ -80,11 +85,6 @@ P(k) emulators return P in Mpc³ when loaded with `probe="custom_log"`; scalar e
 | `wcdm-3degen-linear.npz` | ombh2, omch2, H0, ns, lnAs, w, z, mnu | P_lin(k,z) | 520 | 1e-05 | 49.2 |
 | `wcdm-3degen-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, w, z, mnu, logT_AGN | P_nl(k,z) | 520 | 1e-05 | 49.2 |
 | `wcdm-3degen-s8-fs8.npz` | ombh2, omch2, H0, ns, lnAs, w, z, mnu, logT_AGN | σ8(z), fσ8(z) | 2 | – | – |
-| `wcdm-cb-linear.npz` | ombh2, omch2, H0, ns, lnAs, w, z | P_cb,lin(k,z) | 520 | 1e-05 | 49.2 |
-| `wcdm-cb-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, w, z, logT_AGN | P_cb,nl(k,z) | 520 | 1e-05 | 49.2 |
-| `wcdm-linear.npz` | ombh2, omch2, H0, ns, lnAs, w, z | P_lin(k,z) | 520 | 1e-05 | 49.2 |
-| `wcdm-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, w, z, logT_AGN | P_nl(k,z) | 520 | 1e-05 | 49.2 |
-| `wcdm-s8-fs8.npz` | ombh2, omch2, H0, ns, lnAs, w, z, logT_AGN | σ8(z), fσ8(z) | 2 | – | – |
 
 ## `emulators/wcdm/halofit/` — wCDM — Halofit
 
@@ -119,6 +119,11 @@ P(k) emulators return P in Mpc³ when loaded with `probe="custom_log"`; scalar e
 
 | File | Inputs | Output | n_out | k_min | k_max |
 |---|---|---|---|---|---|
+| `w0wa-0mass-cb-linear.npz` | ombh2, omch2, H0, ns, lnAs, w0, wa, z | P_cb,lin(k,z) | 520 | 1e-05 | 49.2 |
+| `w0wa-0mass-cb-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, w0, wa, z, logT_AGN | P_cb,nl(k,z) | 520 | 1e-05 | 49.2 |
+| `w0wa-0mass-linear.npz` | ombh2, omch2, H0, ns, lnAs, w0, wa, z | P_lin(k,z) | 520 | 1e-05 | 49.2 |
+| `w0wa-0mass-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, w0, wa, z, logT_AGN | P_nl(k,z) | 520 | 1e-05 | 49.2 |
+| `w0wa-0mass-s8-fs8.npz` | ombh2, omch2, H0, ns, lnAs, w0, wa, z, logT_AGN | σ8(z), fσ8(z) | 2 | – | – |
 | `w0wa-1mass-cb-linear.npz` | ombh2, omch2, H0, ns, lnAs, w0, wa, z, mnu | P_cb,lin(k,z) | 520 | 1e-05 | 49.2 |
 | `w0wa-1mass-cb-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, w0, wa, z, mnu, logT_AGN | P_cb,nl(k,z) | 520 | 1e-05 | 49.2 |
 | `w0wa-1mass-linear.npz` | ombh2, omch2, H0, ns, lnAs, w0, wa, z, mnu | P_lin(k,z) | 520 | 1e-05 | 49.2 |
@@ -134,11 +139,6 @@ P(k) emulators return P in Mpc³ when loaded with `probe="custom_log"`; scalar e
 | `w0wa-3degen-linear.npz` | ombh2, omch2, H0, ns, lnAs, w0, wa, z, mnu | P_lin(k,z) | 520 | 1e-05 | 49.2 |
 | `w0wa-3degen-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, w0, wa, z, mnu, logT_AGN | P_nl(k,z) | 520 | 1e-05 | 49.2 |
 | `w0wa-3degen-s8-fs8.npz` | ombh2, omch2, H0, ns, lnAs, w0, wa, z, mnu, logT_AGN | σ8(z), fσ8(z) | 2 | – | – |
-| `w0wa-cb-linear.npz` | ombh2, omch2, H0, ns, lnAs, w0, wa, z | P_cb,lin(k,z) | 520 | 1e-05 | 49.2 |
-| `w0wa-cb-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, w0, wa, z, logT_AGN | P_cb,nl(k,z) | 520 | 1e-05 | 49.2 |
-| `w0wa-linear.npz` | ombh2, omch2, H0, ns, lnAs, w0, wa, z | P_lin(k,z) | 520 | 1e-05 | 49.2 |
-| `w0wa-nonlinear.npz` | ombh2, omch2, H0, ns, lnAs, w0, wa, z, logT_AGN | P_nl(k,z) | 520 | 1e-05 | 49.2 |
-| `w0wa-s8-fs8.npz` | ombh2, omch2, H0, ns, lnAs, w0, wa, z, logT_AGN | σ8(z), fσ8(z) | 2 | – | – |
 
 ## `emulators/w0wa/halofit/` — w0waCDM — Halofit
 
