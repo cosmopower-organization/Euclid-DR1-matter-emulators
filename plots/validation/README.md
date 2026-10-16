@@ -33,11 +33,30 @@ Note that the paper's master table quotes a different statistic (median of the
 
 ## What is missing, and why
 
-* `lcdm/hmcode`, `wcdm/hmcode`, `w0wa/hmcode`: no σ8/fσ8 plots except
-  `wcdm-2mass-s8-fs8` — the test sets for those scalar emulators were not
-  available when the validation was run.
-* `lcdm/halofit`: only the σ8/fσ8 plots — the P(k) test sets for the ΛCDM Halofit
-  variants were not available.
+* `lcdm/hmcode`, `wcdm/hmcode`: no σ8/fσ8 plots except `wcdm-2mass-s8-fs8` — the
+  test sets for those scalar emulators were not available when the validation
+  was run. (`w0wa/hmcode` now has them, see below.)
+* `w0wa/hmcode`: `w0wa-2mass-s8-fs8` has no plot. Its retraining on the extended
+  box did not converge, so that emulator alone was left at its previous version,
+  for which no test set was available. The other three σ8/fσ8 variants are new.
 * `extended/react`: the halo-model-reaction emulators are not distributed here
   (see `emulators/extended/react/README.md`); their validation is in the
   respective MGemu papers.
+
+## Extended-ranges revalidation
+
+139 of the released emulators were retrained on the extended box (w0 up to +1,
+ω_c up to 0.90) and revalidated; their plots, percentile files and summary rows
+here are the new ones. This closed two of the gaps listed above: the 16 ΛCDM
+Halofit P(k) emulators and 3 of the 4 `w0wa/hmcode` σ8/fσ8 emulators are
+validated here for the first time.
+
+The curves were computed by `Emulators/codes/plotting/testing-expanding-ranges.py`
+and re-packed into this layout by `extra/validation-plots/refresh-validation-extended-ranges.py`;
+`params_file` / `feats_file` in those percentile files name that script rather
+than a test-set path. The error definition and the 68/95/99/99.9 levels are
+unchanged, so these rows stay directly comparable with the ones that were not
+recomputed.
+
+Not retrained, and therefore unchanged here: `lcdm/hmcode`, `wcdm/hmcode`,
+`extended/1bddm`, `extended/parametrised_mg`.
