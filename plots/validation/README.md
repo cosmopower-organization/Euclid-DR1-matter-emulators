@@ -51,6 +51,11 @@ here are the new ones. This closed two of the gaps listed above: the 16 ΛCDM
 Halofit P(k) emulators and 3 of the 4 `w0wa/hmcode` σ8/fσ8 emulators are
 validated here for the first time.
 
+The five `lcdm/halofit` 2mass emulators were subsequently retrained once more
+on a regenerated base set (~314k spectra, against ~119k in the original run,
+which had left them the least accurate ΛCDM variant), merged with the same
+ω_c extension and re-filtered. Their rows here are from that retraining.
+
 The curves were computed by `Emulators/codes/plotting/testing-expanding-ranges.py`
 and re-packed into this layout by `extra/validation-plots/refresh-validation-extended-ranges.py`;
 `params_file` / `feats_file` in those percentile files name that script rather
