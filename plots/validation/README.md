@@ -36,9 +36,6 @@ Note that the paper's master table quotes a different statistic (median of the
 * `lcdm/hmcode`, `wcdm/hmcode`: no σ8/fσ8 plots except `wcdm-2mass-s8-fs8` — the
   test sets for those scalar emulators were not available when the validation
   was run. (`w0wa/hmcode` now has them, see below.)
-* `w0wa/hmcode`: `w0wa-2mass-s8-fs8` has no plot. Its retraining on the extended
-  box did not converge, so that emulator alone was left at its previous version,
-  for which no test set was available. The other three σ8/fσ8 variants are new.
 * `extended/react`: the halo-model-reaction emulators are not distributed here
   (see `emulators/extended/react/README.md`); their validation is in the
   respective MGemu papers.
@@ -48,8 +45,17 @@ Note that the paper's master table quotes a different statistic (median of the
 139 of the released emulators were retrained on the extended box (w0 up to +1,
 ω_c up to 0.90) and revalidated; their plots, percentile files and summary rows
 here are the new ones. This closed two of the gaps listed above: the 16 ΛCDM
-Halofit P(k) emulators and 3 of the 4 `w0wa/hmcode` σ8/fσ8 emulators are
+Halofit P(k) emulators and the 4 `w0wa/hmcode` σ8/fσ8 emulators are
 validated here for the first time.
+
+`w0wa-2mass-s8-fs8` is a special case. Its original training data had the
+fσ8 column desynchronised from the parameters (the released emulator, never
+validated, reproduced fσ8 only to ~40%), so σ8 and fσ8 were regenerated from
+scratch for that variant: a 100k-sample standard-box set plus a 200k-sample
+extended-box set, in the ranges of the paper's Table 2. Its row here is the
+emulator trained on those; its test set is the union of the two held-out
+halves (standard 9 974, extended 12 646), and its accuracy is dominated by the
+extended-box half, where the sampling is sparser than for its siblings.
 
 The five `lcdm/halofit` 2mass emulators were subsequently retrained once more
 on a regenerated base set (~314k spectra, against ~119k in the original run,
