@@ -259,11 +259,11 @@ P(k) emulators return P in Mpc³ when loaded with `probe="custom_log"`; scalar e
 
 | File | Inputs | Output | n_out | k_min | k_max |
 |---|---|---|---|---|---|
-| `mg-boost-linear-bin0.npz` | Omega_m, Omega_b, h, ns, lnAs, mu, eta, z | linear boost B_lin(k,z) = P_MG/P_ΛCDM | 800 | 0.0001 | 10 |
-| `mg-boost-linear-bin1.npz` | Omega_m, Omega_b, h, ns, lnAs, mu, eta, z | linear boost B_lin(k,z) = P_MG/P_ΛCDM | 800 | 0.0001 | 10 |
-| `mg-boost-linear-bin2.npz` | Omega_m, Omega_b, h, ns, lnAs, mu, eta, z | linear boost B_lin(k,z) = P_MG/P_ΛCDM | 800 | 0.0001 | 10 |
-| `mg-boost-linear-bin3.npz` | Omega_m, Omega_b, h, ns, lnAs, mu, eta, z | linear boost B_lin(k,z) = P_MG/P_ΛCDM | 800 | 0.0001 | 10 |
-| `mg-boost-linear-bin4.npz` | Omega_m, Omega_b, h, ns, lnAs, mu, eta, z | linear boost B_lin(k,z) = P_MG/P_ΛCDM | 800 | 0.0001 | 10 |
+| `mg-boost-linear-bin0.npz` | Omega_m, Omega_b, h, ns, lnAs, mu, eta, z | linear boost B_lin(k,z) = P_MG/P_ΛCDM | 512 | 0.0001 | 10 |
+| `mg-boost-linear-bin1.npz` | Omega_m, Omega_b, h, ns, lnAs, mu, eta, z | linear boost B_lin(k,z) = P_MG/P_ΛCDM | 512 | 0.0001 | 10 |
+| `mg-boost-linear-bin2.npz` | Omega_m, Omega_b, h, ns, lnAs, mu, eta, z | linear boost B_lin(k,z) = P_MG/P_ΛCDM | 512 | 0.0001 | 10 |
+| `mg-boost-linear-bin3.npz` | Omega_m, Omega_b, h, ns, lnAs, mu, eta, z | linear boost B_lin(k,z) = P_MG/P_ΛCDM | 512 | 0.0001 | 10 |
+| `mg-boost-linear-bin4.npz` | Omega_m, Omega_b, h, ns, lnAs, mu, eta, z | linear boost B_lin(k,z) = P_MG/P_ΛCDM | 512 | 0.0001 | 10 |
 | `mg-boost-linear-multibin.npz` | Omega_m, Omega_b, h, ns, lnAs, mu1, mu2, mu3, mu4, mu5, eta1, eta2, eta3, eta4, eta5, z | linear boost B_lin(k,z) = P_MG/P_ΛCDM | 512 | 0.0001 | 10 |
 | `mg-boost-nonlinear-bin0.npz` | Omega_m, Omega_b, h, ns, lnAs, mu, z | nonlinear boost B_nl(k,z) = P_MG/P_ΛCDM | 1024 | 0.0157 | 12.6 |
 | `mg-boost-nonlinear-bin1.npz` | Omega_m, Omega_b, h, ns, lnAs, mu, z | nonlinear boost B_nl(k,z) = P_MG/P_ΛCDM | 1024 | 0.0157 | 12.6 |
